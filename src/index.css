@@ -40,7 +40,7 @@ h1 {
 
 .add-form {
     background-color: #dee5d4;
-    padding: 2.8rem 0;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,7 @@ input {
     font-weight: 700;
     font-size: 1.8rem;
     cursor: pointer;
-    letter-spacing: +2px;
+    letter-spacing: +2.5px;
     border-radius: 20px;
 }
 
@@ -84,13 +84,24 @@ input::placeholder {
 .list {
     background-color: #fef9d9;
     color: #222222;
-    padding: 4rem 0;
+    padding: 2rem;
+    padding-left: 20rem;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+
+    justify-content: center; /* Default: center if there's only one category */
     flex-direction: column;
-    gap: 3.2rem;
-    align-items: center;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Use flex-start when there are multiple categories */
+.list.multiple {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    ); /* This will create a flexible number of columns */
+    justify-content: flex-start; /* Aligns categories to the left when more than one */
 }
 
 span.inner {
@@ -112,13 +123,13 @@ span.outer {
 
 .list ul {
     list-style: none;
-    width: 80%;
+    width: 100%;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.2rem;
-    justify-content: center;
-    align-content: start;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: center;
 }
 
 .list li {
@@ -128,9 +139,9 @@ span.outer {
 }
 
 input[type="checkbox"] {
-    height: 2rem;
-    width: 2rem;
-    accent-color: #e5771f;
+    height: 1.7rem;
+    width: 1.7rem;
+    accent-color: #222222;
 }
 
 .list li button {
@@ -143,6 +154,7 @@ input[type="checkbox"] {
 }
 
 .stats {
+    letter-spacing: +1.5px;
     background-color: #d2e0fb;
     text-align: center;
     font-weight: 700;
