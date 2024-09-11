@@ -5,6 +5,7 @@ export default function Item({ item, onRemoveItem, onToggleItem }) {
             <input
                 type="checkbox"
                 value={item.packed} // Use 'checked' to reflect the packed status
+                checked={item.packed}
                 onChange={() => onToggleItem(item.id)} // Toggle the packed status when checked
             ></input>
 
