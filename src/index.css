@@ -155,3 +155,64 @@ input[type="checkbox"] {
     font-weight: 700;
     padding: 0.6rem 0;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    html {
+        font-size: 50%; /* Smaller font size for easier reading on small screens */
+    }
+
+    body {
+        font-size: 2rem; /* Adjusted font size for mobile */
+    }
+
+    h1 {
+        font-size: 5rem; /* Smaller header for mobile screens */
+        word-spacing: 10px; /* Adjust spacing for smaller screens */
+    }
+
+    .add-form {
+        padding: 1rem 2%;
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    button,
+    select,
+    input {
+        padding: 1rem 2rem;
+        font-size: 1.6rem; /* Slightly smaller font size for mobile */
+    }
+
+    .clear {
+        margin-left: 0; /* Remove margin on small screens */
+    }
+
+    .list {
+        text-align: center;
+        padding: 1rem 2%;
+        grid-template-columns: repeat(2, 1fr); /* Two-column grid for mobile */
+        gap: 1rem; /* Adjust gap for mobile */
+    }
+    /* Use flex-start when there are multiple categories */
+    .list.multiple {
+        grid-template-columns: repeat(2, 1fr); /* Two-column grid for mobile */
+        justify-content: flex-start; /* Aligns categories to the left when more than one */
+    }
+
+    .list ul {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        ); /* Adjust grid columns */
+    }
+
+    .list li {
+        text-align: center;
+        padding-left: 25%;
+    }
+
+    .stats {
+        font-size: 1.6rem; /* Smaller font size for stats */
+        padding: 1rem 0; /* Increase padding for better readability */
+    }
+}
