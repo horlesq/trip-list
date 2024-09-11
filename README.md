@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Trip List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application for managing your next trip packing list. This app allows users to add, remove, and mark items as packed, while categorizing them into different groups. The packing list is persisted in local storage so that your data remains intact even after a page refresh.
 
-## Available Scripts
+![image](https://github.com/user-attachments/assets/607a49b0-b23b-46f2-b9af-80fb91e5e75d)
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Demo](#demo)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [License](#license)
+- [Contact](#contact)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Add Items**: Easily add items to your packing list with quantity, description, and category.
+- **Remove Items**: Remove items from your list.
+- **Toggle Packed State**: Mark items as packed or unpacked.
+- **Categorize Items**: Organize items into categories such as Clothes, Accessories, Documents, Toiletries, Tech, and Misc.
+- **Local Storage**: The app persists your data using local storage.
+- **Responsive Design**: The app adjusts its layout for different screen sizes.
 
-### `npm run build`
+## Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Check out the live demo of the project at: [Trip-list](https://trip-list-horly.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Adding Items**: Enter a description, select a quantity and category, then click "Add" to add an item to your list.
+- **Removing Items**: Click the ✖️ button next to an item to remove it from the list.
+- **Toggling Packed State**: Click the checkbox next to an item to mark it as packed or unpacked.
+- **Clearing the List**: Click the "Clear" button to remove all items from the list.
 
-### `npm run eject`
+## Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To get started with this project, follow these steps:
+1. **Clone the repository**:
+```bash
+git clone https://github.com/horlesq/trip-list.git
+```
+2. **Navigate to the project directory**:
+```bash
+cd trip-list
+```
+3. **Install dependencies**: Make sure you have [Node.js](https://nodejs.org/en) installed, then run:
+```bash
+npm install
+```
+4. **Start the development server**: 
+```bash
+npm start
+```
+5. Open your browser and go to http://localhost:3000 to see the application in action.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For any inquiries or feedback, feel free to reach out via:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Email: adrian.horlescu@gmail.com
+- Linkedin [Adrian Horlescu](https://www.linkedin.com/in/adrian-horlescu/)
+- GitHub: [Horlesq](https://github.com/horlesq)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application is a modified version of a project teached in [The Ultimate React Course 2024](https://www.udemy.com/course/the-ultimate-react-course)
