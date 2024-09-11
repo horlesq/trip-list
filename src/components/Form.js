@@ -1,34 +1,42 @@
 import { useState } from "react";
 
 export default function Form({ onAddItem, onClearList }) {
+    // State to manage input values
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("");
 
+    // Capitalize the first letter of a string
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
 
+    // Handle form submission
     function handleSubmit(event) {
         event.preventDefault();
 
+        // Prevent adding an item if description or category is missing
         if (!description || category === "") return;
 
+        // Create a new item object
         const newItem = {
             description: capitalizeFirstLetter(description),
             quantity,
             packed: false,
             category,
-            id: Date.now(),
+            id: Date.now(), // Use timestamp as a unique ID
         };
 
+        // Pass the new item to the parent component
         onAddItem(newItem);
 
+        // Clear the input fields
         setDescription("");
         setQuantity(1);
         setCategory("");
     }
 
+    // Handle clearing the list
     function handleClear(event) {
         onClearList();
     }
@@ -36,6 +44,8 @@ export default function Form({ onAddItem, onClearList }) {
     return (
         <form className="add-form" onSubmit={handleSubmit}>
             <h3>What are you packing?</h3>
+
+            {/* Quantity selection */}
             <select
                 value={quantity}
                 onChange={(event) => setQuantity(Number(event.target.value))}
@@ -46,12 +56,16 @@ export default function Form({ onAddItem, onClearList }) {
                     </option>
                 ))}
             </select>
+
+            {/* Description input */}
             <input
                 type="text"
                 placeholder="Item..."
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
             ></input>
+
+            {/* Category selection */}
             <select
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
@@ -66,6 +80,8 @@ export default function Form({ onAddItem, onClearList }) {
                 <option value="tech">TECH</option>
                 <option value="misc">MISC</option>
             </select>
+
+            {/* Submit and Clear buttons */}
             <button type="submit">Add</button>
             <button type="button" onClick={handleClear} className="clear">
                 Clear

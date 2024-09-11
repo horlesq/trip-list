@@ -1,6 +1,7 @@
 import Item from "./Item";
 
 export default function PackingList({ items, onRemoveItem, onToggleItem }) {
+    // List of possible categories
     const categories = [
         "clothes",
         "accessories",
@@ -10,6 +11,7 @@ export default function PackingList({ items, onRemoveItem, onToggleItem }) {
         "misc",
     ];
 
+    // Filter categories to include only those that have at least one item
     const nonEmptyCategories = categories.filter((category) =>
         items.some((item) => item.category === category)
     );
@@ -20,15 +22,19 @@ export default function PackingList({ items, onRemoveItem, onToggleItem }) {
                 nonEmptyCategories.length > 1 ? "multiple" : ""
             }`}
         >
+            {/* Render a section for each non-empty category */}
             {nonEmptyCategories.map((category) => {
+                // Filter items for the current category
                 const categoryItems = items.filter(
                     (item) => item.category === category
                 );
 
                 return (
                     <div className={category} key={category}>
+                        {/* Display the category name */}
                         <h2>{category.toUpperCase()}</h2>
                         <ul>
+                            {/* Render an Item component for each item in the category */}
                             {categoryItems.map((item) => (
                                 <Item
                                     item={item}
