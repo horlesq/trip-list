@@ -81,11 +81,15 @@ input::placeholder {
     color: #fef9d9;
 }
 
+.clear {
+    margin-left: 5rem;
+}
+
 .list {
     background-color: #fef9d9;
     color: #222222;
     padding: 2rem;
-    padding-left: 20rem;
+    padding-left: 7%;
 
     display: grid;
 
@@ -110,15 +114,6 @@ span.inner {
 }
 span.outer {
     color: #222222;
-}
-
-.actions button,
-.list select {
-    text-transform: uppercase;
-    padding: 0.8rem 2.4rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0.8rem;
 }
 
 .list ul {
