@@ -57,20 +57,28 @@ h3 {
 button,
 select,
 input {
-    background-color: #ffebb3;
-    color: #fef9d9;
+    background-color: #fef9d9;
+    color: #222222;
     font-family: inherit;
     border: none;
-    border-radius: 10rem;
+    border-radius: 0rem;
     padding: 1.2rem 3.2rem;
     font-weight: 700;
     font-size: 1.8rem;
     cursor: pointer;
+    letter-spacing: +2px;
+    border-radius: 20px;
+}
+
+input::placeholder {
+    color: #222222;
+    opacity: 30%;
 }
 
 .add-form button {
     text-transform: uppercase;
-    background-color: #76c7ad;
+    background-color: #8eaccd;
+    color: #fef9d9;
 }
 
 .list {
@@ -83,6 +91,14 @@ input {
     flex-direction: column;
     gap: 3.2rem;
     align-items: center;
+}
+
+span.inner {
+    -webkit-text-stroke: 0.6px black; /* width and color */
+    color: #8eaccd;
+}
+span.outer {
+    color: #222222;
 }
 
 .actions button,
