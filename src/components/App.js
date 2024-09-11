@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import Form from "./Form";
 import PackingList from "./PackingList";
 import Stats from "./Stats";
 
 export default function App() {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(() => {
+        const savedItems = localStorage.getItem("items");
+        return savedItems ? JSON.parse(savedItems) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("items", JSON.stringify(items));
+    }, [items]);
 
     function handleAddItem(item) {
         setItems((items) => [...items, item]);
@@ -27,7 +34,10 @@ export default function App() {
         const confirmed = window.confirm(
             "Are you sure you want to clear the list?"
         );
-        if (confirmed) setItems([]);
+        if (confirmed) {
+            setItems([]);
+            localStorage.removeItem("items");
+        }
     }
 
     return (
